@@ -22,5 +22,6 @@ int main(int argc, char *argv[])
       return (1);
     }
 
+  std::cout << "Trying to open: \"" << argv[1] << "\"..." << std::endl;
   return run(argc, argv);
 }
