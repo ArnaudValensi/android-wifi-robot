@@ -24,25 +24,25 @@ class CommunicationUDP
 {
 
 public:
-   //CommunicationUDP();
-   CommunicationUDP(std::string ipDestination, int portDestination);
-   ~CommunicationUDP();
-   int envoyer(std::string datagramme);
-   int recevoir();
+  //CommunicationUDP();
+  CommunicationUDP(std::string ipDestination, int portDestination);
+  ~CommunicationUDP();
+  int envoyer(std::string datagramme);
+  int recevoir();
 
-   int ouvrir();
-   int fermer();
+  int ouvrir();
+  int fermer();
 
 private:
-   //std::string datagramme;
-   int descripteurSocketUDP;
-   udp::endpoint *receiver_endpoint;
-   udp::endpoint *sender_endpoint;
-   udp::socket *socket;
+  //std::string datagramme;
+  int descripteurSocketUDP;
+  udp::endpoint *receiver_endpoint;
+  udp::endpoint *sender_endpoint;
+  udp::socket *socket;
 
 
-   //io_service permet d'acceder aux fonctionnalité I/O de la librairie asio
-   boost::asio::io_service io_service;
+  //io_service permet d'acceder aux fonctionnalité I/O de la librairie asio
+  boost::asio::io_service io_service;
 
 
 };

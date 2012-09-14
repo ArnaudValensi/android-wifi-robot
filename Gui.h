@@ -24,7 +24,6 @@ private:
   Ui::Gui *ui;
   CommunicationUDP *socketUDP;
   Video *video;
-  std::string devicePath;
 
   void envoyerDatagramme(std::string);
 

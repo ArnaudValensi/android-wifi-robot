@@ -1,23 +1,23 @@
 #ifndef VIDEO_H
 #define VIDEO_H
 
-#include <QString>
+#include <string>
 #include <vlc/vlc.h>
 
 
 class Video
 {
 public:
-    Video(int, QString);
-    ~Video();
-    void demarrer();
+  Video(int winid, std::string flux);
+  ~Video();
+  void start();
 
 private:
-    int windid;
-    QString flux;
-    libvlc_instance_t * inst;
-    libvlc_media_player_t *mp;
-    libvlc_media_t *m;
+  int windid;
+  std::string flux;
+  libvlc_instance_t * inst;
+  libvlc_media_player_t *mp;
+  libvlc_media_t *m;
 
 
 };

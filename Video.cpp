@@ -1,43 +1,44 @@
-#include "Video.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include <vlc/vlc.h>
 #include <QString>
+#include <iostream>
+#include "Video.h"
 
-Video::Video(int windid, QString flux)
+Video::Video(int windid, std::string flux)
 {
-   this->windid = windid;
-   this->flux = flux;
+  this->windid = windid;
+  this->flux = flux;
 }
 
 Video::~Video()
 {
-    /* Stop playing */
-    libvlc_media_player_stop (mp);
+  /* Stop playing */
+  libvlc_media_player_stop (mp);
 
-    /* Free the media_player */
-    libvlc_media_player_release (mp);
+  /* Free the media_player */
+  libvlc_media_player_release (mp);
 
-    libvlc_release (inst);
+  libvlc_release (inst);
 }
 
-void Video::demarrer()
+void Video::start()
 {
-   /* Load the VLC engine */
-   inst = libvlc_new (0, NULL);
-   mp = libvlc_media_player_new (inst);
+  std::cout << "flux:" << flux << std::endl;
 
-   /* On ouvre le flux "flux.toAscii()". Peut être : ftp://, http://, file://, v4l://, etc... */
-   m = libvlc_media_new_location (inst, flux.toAscii());
+  /* Load the VLC engine */
+  inst = libvlc_new (0, NULL);
+  mp = libvlc_media_player_new (inst);
 
-   libvlc_media_player_set_media (mp, m);
+  /* On ouvre le flux "flux.toAscii()". Peut être : ftp://, http://, file://, v4l://, etc... */
+  m = libvlc_media_new_location (inst, flux.c_str());
 
-   /* On assigne le player à la QFrame ayant l'handler "windid" */
-   libvlc_media_player_set_xwindow (mp, windid);
+  libvlc_media_player_set_media (mp, m);
 
-   /* No need to keep the media now */
-   libvlc_media_release (m);
+  /* On assigne le player à la QFrame ayant l'handler "windid" */
+  libvlc_media_player_set_xwindow (mp, windid);
 
-   /* play the media_player */
-   libvlc_media_player_play (mp);
+  /* No need to keep the media now */
+  libvlc_media_release (m);
+
+  /* play the media_player */
+  libvlc_media_player_play (mp);
 }

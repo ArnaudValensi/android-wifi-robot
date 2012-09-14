@@ -1,7 +1,7 @@
+#include <string>
 #include "Gui.h"
 #include "ui_Gui.h"
 #include "Socketudp.h"
-#include <string>
 #include "Video.h"
 
 
@@ -13,9 +13,6 @@ Gui::Gui(QWidget *parent) :
 
   socketUDP = new CommunicationUDP("192.168.0.11", 6665);
   socketUDP->ouvrir();
-
-  video = new Video(ui->video->winId(), "v4l:///dev/video1");
-  video->demarrer();
 
   connect(ui->avancer, SIGNAL(pressed()), this, SLOT(avancer()));
   connect(ui->avancer, SIGNAL(released()), this, SLOT(avancerStop()));
@@ -41,7 +38,8 @@ Gui::~Gui()
 
 void Gui::init(char *str)
 {
-  devicePath = std::string(str);
+  video = new Video(ui->video->winId(), std::string(str));
+  video->start();
 }
 
 void Gui::envoyerDatagramme(std::string data)

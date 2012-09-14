@@ -21,4 +21,4 @@ HEADERS  += Gui.h \
 
 FORMS    += Gui.ui
 
-LIBS += -L/usr/lib -lboost_system -lpthread -lvlc
+unix:LIBS += -L/usr/lib -lboost_system -lpthread -lvlc -g
