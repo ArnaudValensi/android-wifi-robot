@@ -1,0 +1,6 @@
+moc_*
+*.o
+ui_*
+WifiRobot_PC
+Makefile
+*~
