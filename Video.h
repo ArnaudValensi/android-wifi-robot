@@ -2,18 +2,19 @@
 #define VIDEO_H
 
 #include <string>
+#include <QWidget>
 #include <vlc/vlc.h>
 
 
 class Video
 {
 public:
-  Video(int winid, std::string flux);
+  Video(WId winid, std::string flux);
   ~Video();
   void start();
 
 private:
-  int windid;
+  WId windid;
   std::string flux;
   libvlc_instance_t * inst;
   libvlc_media_player_t *mp;
