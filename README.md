@@ -14,3 +14,7 @@ To compile on windows you have to install:
 You have to set some environment variable:
 * BOOST_ROOT=c:\path\to\boost (contain 'boost', 'doc', 'libs', 'tools', ...)
 * VLC_SDK=c:\path\to\vlc\sdk (contain 'include' and 'lib' folders)
+
+When you have compiled, you must:
+* add dlls and 'plugins' folder located in the vlc folder
+* add 'QtCore4.dll' and 'QtGui4.dll' located in the QtSDK installation
