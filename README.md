@@ -7,11 +7,10 @@ Windows compil instruction
 ==========================
 
 To compile on windows you have to install:
--QtSDK
--Boost (I have the 1.51.0 but should be work with others versions)
--vlc sdk (contained on windows vlc intall, some time the second last, i have the 2.0.2 but should be work with others versions)
+* QtSDK
+* Boost (I have the 1.51.0 but should be work with others versions)
+* vlc sdk (contained on windows vlc intall, some time the second last, i have the 2.0.2 but should be work with others versions)
 
 You have to set some environment variable:
-//QT_PATH=
-BOOST_ROOT=c:\path\to\boost (contain 'boost', 'doc', 'libs', 'tools', ...)
-VLC_SDK=c:\path\to\vlc\sdk (contain 'include' and 'lib' folders)
+* BOOST_ROOT=c:\path\to\boost (contain 'boost', 'doc', 'libs', 'tools', ...)
+* VLC_SDK=c:\path\to\vlc\sdk (contain 'include' and 'lib' folders)
