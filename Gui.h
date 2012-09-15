@@ -17,7 +17,7 @@ class Gui : public QMainWindow
 
 public:
   explicit Gui(QWidget *parent = 0);
-  ~Gui();
+  virtual ~Gui();
   void init(char *str);
 
 private:

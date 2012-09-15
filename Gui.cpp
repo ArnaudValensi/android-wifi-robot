@@ -1,4 +1,6 @@
 #include <string>
+#include <QWidget>
+#include <QObject>
 #include "Gui.h"
 #include "ui_Gui.h"
 #include "Socketudp.h"
@@ -39,6 +41,7 @@ Gui::~Gui()
 void Gui::init(char *str)
 {
   video = new Video(ui->video->winId(), std::string(str));
+/*  video = new Video(ui->frame->winId(), std::string(str));*/
   video->start();
 }
 

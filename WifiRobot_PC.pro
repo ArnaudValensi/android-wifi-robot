@@ -9,6 +9,7 @@ QT       += core gui
 TARGET = WifiRobot_PC
 TEMPLATE = app
 
+CONFIG += console debug
 
 SOURCES += main.cpp\
         Gui.cpp \
@@ -27,4 +28,5 @@ DEFINES += WINVER=0x0501
 win32:INCLUDEPATH += $$(BOOST_ROOT) $$(VLC_SDK)/include
 
 unix:LIBS += -L/usr/lib -lboost_system -lpthread -lvlc -g
-win32:LIBS += -L$$(BOOST_ROOT)/stage/lib $$(VLC_SDK)/lib/libvlc.lib
+win32:LIBS += -L$$(BOOST_ROOT)/stage/lib $$(VLC_SDK)/lib/libvlc.lib -lboost_system-mgw46-mt-1_51 -lws2_32 
+
